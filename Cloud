@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serveis al Núvol - Taula Completa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-size: 1.8em;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tbody tr:hover {
+            background-color: #f5f5ff;
+            transition: background-color 0.3s ease;
+        }
+        
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .service-type {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85em;
+            text-transform: uppercase;
+        }
+        
+        .iaas {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .paas {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .saas {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .provider {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        
+        footer {
+            background: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+            
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            
+            .legend {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☁️ Serveis al Núvol</h1>
+            <p class="subtitle">Exemples de Programari i Tipus de Servei</p>
+        </header>
+        
+        <div class="content">
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-box" style="background-color: #e3f2fd;"></div>
+                    <span><strong>IaaS</strong> - Infrastructure as a Service</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background-color: #f3e5f5;"></div>
+                    <span><strong>PaaS</strong> - Platform as a Service</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background-color: #e8f5e9;"></div>
+                    <span><strong>SaaS</strong> - Software as a Service</span>
+                </div>
+            </div>
+            
+            <h2>📊 Taula Completa de Serveis</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipus</th>
+                            <th>Proveïdor/Programari</th>
+                            <th>Descripció</th>
+                            <th>Casos d'Ús</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="service-type iaas">IaaS</span></td>
+                            <td class="provider">Amazon EC2</td>
+                            <td>Servidors virtuals escalables</td>
+                            <td>Allotjament web, aplicacions empresarials</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type iaas">IaaS</span></td>
+                            <td class="provider">Microsoft Azure VMs</td>
+                            <td>Màquines virtuals a Azure</td>
+                            <td>Migració d'aplicacions, entorns híbrids</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type iaas">IaaS</span></td>
+                            <td class="provider">Google Compute Engine</td>
+                            <td>Capacitat de computació</td>
+                            <td>Processament de dades, machine learning</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type iaas">IaaS</span></td>
+                            <td class="provider">DigitalOcean Droplets</td>
+                            <td>Servidors virtuals simples</td>
+                            <td>Startups, desenvolupadors, projectes petits</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type iaas">IaaS</span></td>
+                            <td class="provider">IBM Cloud Infrastructure</td>
+                            <td>Infraestructura d'IBM</td>
+                            <td>Aplicacions empresarials crítiques</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type iaas">IaaS</span></td>
+                            <td class="provider">Oracle Cloud Infrastructure</td>
+                            <td>Serveis d'infraestructura</td>
+                            <td>Bases de dades Oracle, aplicacions empresarials</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type paas">PaaS</span></td>
+                            <td class="provider">Google App Engine</td>
+                            <td>Plataforma per a aplicacions web</td>
+                            <td>Aplicacions web escalables</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type paas">PaaS</span></td>
+                            <td class="provider">Heroku</td>
+                            <td>Desplegament fàcil d'aplicacions</td>
+                            <td>Startups, prototips ràpids</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type paas">PaaS</span></td>
+                            <td class="provider">Azure App Service</td>
+                            <td>Servei per a aplicacions web i APIs</td>
+                            <td>Aplicacions .NET, Node.js, Python</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type paas">PaaS</span></td>
+                            <td class="provider">AWS Elastic Beanstalk</td>
+                            <td>Gestió automàtica d'aplicacions</td>
+                            <td>Aplicacions Java, PHP, Python, Ruby</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type paas">PaaS</span></td>
+                            <td class="provider">Red Hat OpenShift</td>
+                            <td>Plataforma de contenidors</td>
+                            <td>Microserveis, aplicacions en contenidors</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type paas">PaaS</span></td>
+                            <td class="provider">Salesforce Platform</td>
+                            <td>Desenvolupament d'aplicacions CRM</td>
+                            <td>Aplicacions personalitzades de negoci</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type paas">PaaS</span></td>
+                            <td class="provider">Firebase (Google)</td>
+                            <td>Plataforma per a apps mòbils</td>
+                            <td>Apps mòbils, aplicacions en temps real</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">Gmail / Google Workspace</td>
+                            <td>Correu i eines de productivitat</td>
+                            <td>Comunicació empresarial, col·laboració</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">Microsoft 365</td>
+                            <td>Suite d'aplicacions d'oficina</td>
+                            <td>Processament de textos, fulls de càlcul</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">Salesforce</td>
+                            <td>Sistema CRM</td>
+                            <td>Vendes, màrqueting, atenció al client</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">Dropbox</td>
+                            <td>Emmagatzematge al núvol</td>
+                            <td>Còpies de seguretat, col·laboració</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">Slack</td>
+                            <td>Comunicació empresarial</td>
+                            <td>Missatgeria d'equip, integracions</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">Zoom</td>
+                            <td>Videoconferències</td>
+                            <td>Reunions virtuals, webinars</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">Trello</td>
+                            <td>Gestió de projectes Kanban</td>
+                            <td>Organització de tasques, gestió àgil</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">Adobe Creative Cloud</td>
+                            <td>Suite d'eines creatives</td>
+                            <td>Disseny gràfic, edició de vídeo</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">SAP S/4HANA Cloud</td>
+                            <td>Sistema ERP</td>
+                            <td>Gestió financera, logística, RRHH</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">QuickBooks Online</td>
+                            <td>Programari de comptabilitat</td>
+                            <td>Facturació, comptabilitat per a pimes</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">Shopify</td>
+                            <td>Plataforma de comerç electrònic</td>
+                            <td>Botigues en línia, gestió de vendes</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">Canva</td>
+                            <td>Disseny gràfic en línia</td>
+                            <td>Presentacions, xarxes socials</td>
+                        </tr>
+                        <tr>
+                            <td><span class="service-type saas">SaaS</span></td>
+                            <td class="provider">HubSpot</td>
+                            <td>Màrqueting i vendes</td>
+                            <td>Automatització de màrqueting, CRM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h2>⚖️ Comparativa de Característiques</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>IaaS</th>
+                            <th>PaaS</th>
+                            <th>SaaS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Control de l'usuari</strong></td>
+                            <td>Alt (infraestructura, SO, apps)</td>
+                            <td>Mitjà (aplicacions i dades)</td>
+                            <td>Baix (només ús de l'aplicació)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gestió requerida</strong></td>
+                            <td>Alta</td>
+                            <td>Mitjana</td>
+                            <td>Mínima</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Flexibilitat</strong></td>
+                            <td>Màxima</td>
+                            <td>Alta</td>
+                            <td>Limitada</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Temps de desplegament</strong></td>
+                            <td>Hores/Dies</td>
+                            <td>Minuts/Hores</td>
+                            <td>Immediat</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Coneixements tècnics</strong></td>
+                            <td>Alts</td>
+                            <td>Mitjans</td>
+                            <td>Baixos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost inicial</strong></td>
+                            <td>Variable</td>
+                            <td>Moderat</td>
+                            <td>Baix</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exemples d'usuaris</strong></td>
+                            <td>Administradors de sistemes</td>
+                            <td>Desenvolupadors</td>
+                            <td>Usuaris finals, empreses</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Escalabilitat</strong></td>
+                            <td>Manual/Automatitzable</td>
+                            <td>Automàtica</td>
+                            <td>Transparent</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h2>🔧 Serveis Addicionals al Núvol</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Exemples</th>
+                            <th>Tipus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Emmagatzematge</strong></td>
+                            <td>Amazon S3, Google Cloud Storage, Azure Blob Storage</td>
+                            <td><span class="service-type iaas">IaaS</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bases de dades</strong></td>
+                            <td>Amazon RDS, Google Cloud SQL, Azure SQL Database</td>
+                            <td><span class="service-type paas">PaaS</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anàlisi de dades</strong></td>
+                            <td>Google BigQuery, Amazon Redshift, Snowflake</td>
+                            <td><span class="service-type paas">PaaS</span> / <span class="service-type saas">SaaS</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Machine Learning</strong></td>
+                            <td>AWS SageMaker, Google AI Platform, Azure ML</td>
+                            <td><span class="service-type paas">PaaS</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seguretat</strong></td>
+                            <td>Cloudflare, Okta, Auth0</td>
+                            <td><span class="service-type saas">SaaS</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Monitorització</strong></td>
+                            <td>Datadog, New Relic, Splunk Cloud</td>
+                            <td><span class="service-type saas">SaaS</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>CDN</strong></td>
+                            <td>Cloudflare, Akamai, Amazon CloudFront</td>
+                            <td><span class="service-type iaas">IaaS</span> / <span class="service-type paas">PaaS</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <footer>
+            <p>📚 Material educatiu sobre Computació al Núvol</p>
+            <p>© 2025 - Tots els noms de marca i productes són propietat dels seus respectius propietaris</p>
+        </footer>
+    </div>
+</body>
+</html>
